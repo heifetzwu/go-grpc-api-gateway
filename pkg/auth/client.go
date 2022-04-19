@@ -3,8 +3,8 @@ package auth
 import (
 	"fmt"
 
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/auth/pb"
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/config"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/auth/pb"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/config"
 	"google.golang.org/grpc"
 )
 

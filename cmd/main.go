@@ -4,10 +4,10 @@ import (
 	"log"
 
 	"github.com/gin-gonic/gin"
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/auth"
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/config"
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/order"
-	"github.com/hellokvn/go-grpc-api-gateway/pkg/product"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/auth"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/config"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/order"
+	"github.com/heifetzwu/go-grpc-api-gateway/pkg/product"
 )
 
 func main() {
