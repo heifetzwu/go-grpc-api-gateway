@@ -1,6 +1,8 @@
 package product
 
 import (
+	"fmt"
+
 	"github.com/gin-gonic/gin"
 	"github.com/heifetzwu/go-grpc-api-gateway/pkg/auth"
 	"github.com/heifetzwu/go-grpc-api-gateway/pkg/config"
@@ -8,6 +10,7 @@ import (
 )
 
 func RegisterRoutes(r *gin.Engine, c *config.Config, authSvc *auth.ServiceClient) {
+	fmt.Print("###2 RegisterRoutes authRequired")
 	a := auth.InitAuthMiddleware(authSvc)
 
 	svc := &ServiceClient{

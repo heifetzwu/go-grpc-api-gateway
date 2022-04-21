@@ -2,6 +2,7 @@ package auth
 
 import (
 	"context"
+	"fmt"
 	"net/http"
 	"strings"
 
@@ -18,6 +19,7 @@ func InitAuthMiddleware(svc *ServiceClient) AuthMiddlewareConfig {
 }
 
 func (c *AuthMiddlewareConfig) AuthRequired(ctx *gin.Context) {
+	fmt.Println("###1  auth required")
 	authorization := ctx.Request.Header.Get("authorization")
 
 	if authorization == "" {
@@ -31,10 +33,12 @@ func (c *AuthMiddlewareConfig) AuthRequired(ctx *gin.Context) {
 		ctx.AbortWithStatus(http.StatusUnauthorized)
 		return
 	}
-
+	fmt.Println("### 3: token = ", token[1])
 	res, err := c.svc.Client.Validate(context.Background(), &pb.ValidateRequest{
 		Token: token[1],
 	})
+
+	fmt.Println("### 4: res = ", res)
 
 	if err != nil || res.Status != http.StatusOK {
 		ctx.AbortWithStatus(http.StatusUnauthorized)

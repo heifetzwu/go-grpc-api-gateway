@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"log"
 
 	"github.com/gin-gonic/gin"
@@ -11,6 +12,7 @@ import (
 )
 
 func main() {
+	fmt.Println("###0 main")
 	c, err := config.LoadConfig()
 
 	if err != nil {
