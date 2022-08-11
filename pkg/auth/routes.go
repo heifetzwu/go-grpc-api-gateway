@@ -14,6 +14,7 @@ func RegisterRoutes(r *gin.Engine, c *config.Config) *ServiceClient {
 	routes := r.Group("/auth")
 	routes.POST("/register", svc.Register)
 	routes.POST("/login", svc.Login)
+	routes.GET("/validate", svc.Validate)
 
 	return svc
 }
@@ -24,4 +25,8 @@ func (svc *ServiceClient) Register(ctx *gin.Context) {
 
 func (svc *ServiceClient) Login(ctx *gin.Context) {
 	routes.Login(ctx, svc.Client)
+}
+
+func (svc *ServiceClient) Validate(ctx *gin.Context) {
+	routes.ValidateCookie(ctx, svc.Client)
 }

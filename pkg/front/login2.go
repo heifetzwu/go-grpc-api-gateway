@@ -12,10 +12,22 @@ import (
 // 	Password string `json:"password"`
 // }
 
-func Login2(ctx *gin.Context) {
+func LoginGet(ctx *gin.Context) {
 	fmt.Println("### login2 ##1")
-	ctx.HTML(http.StatusOK, "login.html", gin.H{
-		"title": "hello~ html",
+	fmt.Println("ctx =", ctx)
+
+	ctx.HTML(http.StatusOK, "login.gohtml", gin.H{
+		"title": "hello~ jack",
+	})
+
+}
+
+func LoginPost(ctx *gin.Context) {
+	fmt.Println("### login2 ##1")
+	fmt.Println("ctx =", ctx)
+
+	ctx.HTML(http.StatusOK, "login.gohtml", gin.H{
+		"title": "hello~ jack",
 	})
 
 }
